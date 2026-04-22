@@ -3224,37 +3224,83 @@
         
         <div id="tab-thresholds" class="tab-content hidden">
             <style>
-                .thresh-block { margin-bottom: 28px; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.10); }
-                .thresh-title { display: flex; align-items: baseline; gap: 10px; padding: 12px 18px; color: #fff; }
-                .thresh-title-main { font-size: 1.15rem; font-weight: 700; letter-spacing: 0.03em; }
-                .thresh-title-sub  { font-size: 0.85rem; opacity: 0.80; }
+                /* Thresholds Enhanced Styles */
+                .thresh-wrapper { max-width: 1200px; margin: 0 auto; }
+                .thresh-header { background: linear-gradient(135deg, #1e3a5f 0%, #0f2744 100%); padding: 24px; border-radius: 16px 16px 0 0; color: white; text-align: center; margin-bottom: 0; }
+                .thresh-header h2 { margin: 0 0 8px 0; font-size: 1.5rem; font-weight: 700; }
+                .thresh-header p { margin: 0; opacity: 0.85; font-size: 0.9rem; }
+                
+                /* Legend Cards */
+                .thresh-legend { display: flex; justify-content: center; gap: 24px; padding: 20px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; }
+                .legend-card { display: flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.2s; }
+                .legend-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+                .legend-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: white; }
+                .legend-card.fak .legend-icon { background: linear-gradient(135deg, #22c55e, #16a34a); }
+                .legend-card.t2 .legend-icon { background: linear-gradient(135deg, #f59e0b, #d97706); }
+                .legend-card.t1 .legend-icon { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+                .legend-card.spot .legend-icon { background: linear-gradient(135deg, #ef4444, #dc2626); }
+                .legend-text strong { display: block; font-size: 0.95rem; }
+                .legend-text span { font-size: 0.8rem; color: #64748b; }
+                
+                /* Block Styles */
+                .thresh-block { margin-bottom: 28px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.12); background: white; }
+                .thresh-title { display: flex; align-items: center; gap: 12px; padding: 16px 24px; color: #fff; }
+                .thresh-title-icon { font-size: 24px; }
+                .thresh-title-main { font-size: 1.3rem; font-weight: 700; letter-spacing: 0.02em; }
+                .thresh-title-sub { font-size: 0.9rem; opacity: 0.85; padding-left: 12px; border-left: 1px solid rgba(255,255,255,0.3); }
+                
+                /* Table Styles */
                 .thresh-table { width: 100%; border-collapse: collapse; background: #fff; }
-                .thresh-pod-hdr { padding: 8px 10px; text-align: left; font-weight: 600; font-size: 0.82rem; background: #f0f0f0; border-bottom: 2px solid #ddd; min-width: 80px; }
-                .thresh-tier-hdr { padding: 8px 4px; text-align: center; font-weight: 700; font-size: 0.85rem; border-bottom: 2px solid #ddd; }
-                .fak-hdr  { background: #1b5e20; color: #fff; }
-                .t2-hdr   { background: #e65100; color: #fff; }
-                .t1-hdr   { background: #1565c0; color: #fff; }
-                .spot-hdr { background: #b71c1c; color: #fff; }
-                .thresh-sub { padding: 4px 6px; text-align: center; font-size: 0.75rem; font-weight: 600; border-bottom: 1px solid #e0e0e0; }
-                .thresh-pod { padding: 10px 10px; font-size: 0.82rem; font-weight: 600; color: #333; border-bottom: 1px solid #eee; white-space: pre-line; line-height: 1.4; vertical-align: middle; }
-                .thresh-row:hover td { background: #f9f9f9 !important; }
-                .thresh-cell { padding: 10px 8px; text-align: center; font-size: 0.82rem; border-bottom: 1px solid #eee; vertical-align: middle; line-height: 1.35; }
-                .thresh-cell.fak  { background: #f1f8e9; color: #2e7d32; font-weight: 600; }
-                .thresh-cell.t2   { background: #fff3e0; color: #e65100; }
-                .thresh-cell.t1   { background: #e3f2fd; color: #1565c0; font-weight: 600; }
-                .thresh-cell.spot { background: #ffebee; color: #c62828; }
-                .legend-dot { display:inline-block; width:11px; height:11px; border-radius:50%; margin-right:4px; vertical-align:middle; }
+                .thresh-pod-hdr { padding: 12px 16px; text-align: left; font-weight: 700; font-size: 0.85rem; background: #f1f5f9; border-bottom: 2px solid #e2e8f0; min-width: 100px; color: #475569; }
+                .thresh-tier-hdr { padding: 12px 8px; text-align: center; font-weight: 700; font-size: 0.9rem; border-bottom: 2px solid #e2e8f0; color: white; }
+                .fak-hdr  { background: linear-gradient(135deg, #22c55e, #16a34a); }
+                .t2-hdr   { background: linear-gradient(135deg, #f59e0b, #d97706); }
+                .t1-hdr   { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+                .spot-hdr { background: linear-gradient(135deg, #ef4444, #dc2626); }
+                .thresh-sub { padding: 8px 6px; text-align: center; font-size: 0.8rem; font-weight: 600; border-bottom: 1px solid #e0e0e0; }
+                .thresh-pod { padding: 14px 16px; font-size: 0.88rem; font-weight: 700; color: #1e293b; border-bottom: 1px solid #f1f5f9; background: #fafbfc; white-space: pre-line; line-height: 1.5; vertical-align: middle; }
+                .thresh-row { transition: all 0.2s ease; }
+                .thresh-row:hover { background: #f8fafc !important; transform: scale(1.005); }
+                .thresh-row:hover .thresh-pod { background: #e3f2fd !important; }
+                .thresh-cell { padding: 14px 10px; text-align: center; font-size: 0.88rem; border-bottom: 1px solid #f1f5f9; vertical-align: middle; line-height: 1.4; }
+                .thresh-cell.fak  { background: linear-gradient(180deg, #f0fdf4, #dcfce7); color: #15803d; font-weight: 700; border-left: 3px solid #22c55e; }
+                .thresh-cell.t2   { background: linear-gradient(180deg, #fffbeb, #fef3c7); color: #b45309; font-weight: 600; border-left: 3px solid #f59e0b; }
+                .thresh-cell.t1   { background: linear-gradient(180deg, #eff6ff, #dbeafe); color: #1d4ed8; font-weight: 700; border-left: 3px solid #3b82f6; }
+                .thresh-cell.spot { background: linear-gradient(180deg, #fef2f2, #fee2e2); color: #b91c1c; font-weight: 600; border-left: 3px solid #ef4444; }
+                .thresh-cell .rate { font-size: 1rem; font-weight: 700; }
+                .thresh-cell .label { font-size: 0.7rem; opacity: 0.7; display: block; }
+                
+                /* Footer Note */
+                .thresh-footer { background: #1e293b; color: #94a3b8; padding: 16px 24px; border-radius: 0 0 16px 16px; font-size: 0.8rem; text-align: center; }
+                .thresh-footer strong { color: #e2e8f0; }
             </style>
 
-            <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:12px;">Rate Tier Thresholds</h2>
-
-            <!-- Legend -->
-            <div style="display:flex;gap:18px;margin-bottom:18px;font-size:0.85rem;align-items:center;">
-                <span><span class="legend-dot" style="background:#2e7d32;"></span>FAK</span>
-                <span><span class="legend-dot" style="background:#f59e0b;"></span>T2</span>
-                <span><span class="legend-dot" style="background:#1565c0;"></span>T1</span>
-                <span><span class="legend-dot" style="background:#c62828;"></span>Spot</span>
-            </div>
+            <div class="thresh-wrapper">
+                <!-- Header -->
+                <div class="thresh-header">
+                    <h2>📊 Rate Tier Thresholds</h2>
+                    <p>运价等级阈值定义 · FAK / T2 / T1 / Spot 分级标准</p>
+                </div>
+                
+                <!-- Legend Cards -->
+                <div class="thresh-legend">
+                    <div class="legend-card fak">
+                        <div class="legend-icon">💎</div>
+                        <div class="legend-text"><strong>FAK</strong><span>协议运价</span></div>
+                    </div>
+                    <div class="legend-card t2">
+                        <div class="legend-icon">📈</div>
+                        <div class="legend-text"><strong>T2</strong><span>次级运价</span></div>
+                    </div>
+                    <div class="legend-card t1">
+                        <div class="legend-icon">🏆</div>
+                        <div class="legend-text"><strong>T1</strong><span>战略客户</span></div>
+                    </div>
+                    <div class="legend-card spot">
+                        <div class="legend-icon">⚡</div>
+                        <div class="legend-text"><strong>Spot</strong><span>市场运价</span></div>
+                    </div>
+                </div>
 
             
     <div class="thresh-block">
@@ -3498,6 +3544,12 @@
             </tbody>
         </table>
     </div>
+            </div>
+            
+            <!-- Footer Note -->
+            <div class="thresh-footer">
+                <strong>📌 说明:</strong> 运价以 <strong>USD/TEU</strong> 为单位 · FAK ≥ 阈值上限 · T1 为单一固定值 · Spot < T1 阈值
+            </div>
         </div>
         
         <div id="tab-t1" class="tab-content hidden">
