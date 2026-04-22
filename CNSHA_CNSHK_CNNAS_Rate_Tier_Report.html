@@ -3250,9 +3250,9 @@
                 .thresh-title-sub { font-size: 0.9rem; opacity: 0.85; padding-left: 12px; border-left: 1px solid rgba(255,255,255,0.3); }
                 
                 /* Table Styles */
-                .thresh-table { width: 100%; border-collapse: collapse; background: #fff; }
-                .thresh-pod-hdr { padding: 12px 16px; text-align: left; font-weight: 700; font-size: 0.85rem; background: #f1f5f9; border-bottom: 2px solid #e2e8f0; min-width: 100px; color: #475569; }
-                .thresh-tier-hdr { padding: 12px 8px; text-align: center; font-weight: 700; font-size: 0.9rem; border-bottom: 2px solid #e2e8f0; color: white; }
+                .thresh-table { width: 100%; border-collapse: collapse; background: #fff; table-layout: fixed; }
+                .thresh-pod-hdr { padding: 12px 16px; text-align: left; font-weight: 700; font-size: 0.85rem; background: #f1f5f9; border-bottom: 2px solid #e2e8f0; min-width: 80px; width: 12%; color: #475569; }
+                .thresh-tier-hdr { padding: 12px 8px; text-align: center; font-weight: 700; font-size: 1rem; border-bottom: 2px solid #e2e8f0; color: white; min-width: 70px; width: 11%; }
                 .fak-hdr  { background: linear-gradient(135deg, #22c55e, #16a34a); }
                 .t2-hdr   { background: linear-gradient(135deg, #f59e0b, #d97706); }
                 .t1-hdr   { background: linear-gradient(135deg, #3b82f6, #2563eb); }
@@ -3278,14 +3278,14 @@
                 .thresh-footer strong { color: #e2e8f0; }
                 
                 /* Compact Table */
-                .thresh-block-compact { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-                .thresh-block-compact .thresh-table { font-size: 1rem; }
-                .thresh-block-compact .thresh-pod-hdr { padding: 10px 12px; font-size: 0.95rem; }
-                .thresh-block-compact .thresh-tier-hdr { padding: 10px 6px; font-size: 0.95rem; }
-                .thresh-block-compact .thresh-sub { padding: 6px 3px; font-size: 0.7rem; }
-                .thresh-block-compact .thresh-pod { padding: 10px 8px; font-size: 0.75rem; }
-                .thresh-block-compact .thresh-cell { padding: 10px 4px; font-size: 0.75rem; }
-                .thresh-block-compact .thresh-cell .rate { font-size: 0.85rem; }
+                .thresh-block-compact { background: white; border-radius: 12px; overflow-x: auto; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+                .thresh-block-compact .thresh-table { font-size: 1rem; table-layout: fixed; }
+                .thresh-block-compact .thresh-pod-hdr { padding: 10px 8px; font-size: 0.9rem; }
+                .thresh-block-compact .thresh-tier-hdr { padding: 10px 4px; font-size: 0.9rem; }
+                .thresh-block-compact .thresh-sub { padding: 6px 3px; font-size: 0.75rem; }
+                .thresh-block-compact .thresh-pod { padding: 10px 6px; font-size: 0.8rem; }
+                .thresh-block-compact .thresh-cell { padding: 8px 4px; font-size: 0.85rem; }
+                .thresh-block-compact .thresh-cell .rate { font-size: 0.9rem; }
             </style>
 
             <div class="thresh-wrapper">
