@@ -3267,22 +3267,22 @@
                 .thresh-cell .rate { font-size: 1rem; font-weight: 700; }
                 .thresh-cell .label { font-size: 0.7rem; opacity: 0.7; display: block; }
                 
-                /* Three Column Layout */
-                .thresh-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+                /* Single Column Layout */
+                .thresh-grid { display: flex; flex-direction: column; gap: 28px; margin-top: 20px; }
                 
                 /* Footer Note */
                 .thresh-footer { background: #1e293b; color: #94a3b8; padding: 16px 24px; border-radius: 0 0 16px 16px; font-size: 0.8rem; text-align: center; }
                 .thresh-footer strong { color: #e2e8f0; }
                 
-                /* Compact Table */
-                .thresh-block-compact { background: white; border-radius: 12px; overflow-x: auto; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-                .thresh-block-compact .thresh-table { font-size: 1.05rem; }
-                .thresh-block-compact .thresh-pod-hdr { padding: 12px 10px; font-size: 0.95rem; }
-                .thresh-block-compact .thresh-tier-hdr { padding: 12px 8px; font-size: 0.95rem; }
-                .thresh-block-compact .thresh-sub { padding: 8px 6px; font-size: 0.85rem; }
-                .thresh-block-compact .thresh-pod { padding: 12px 8px; font-size: 0.9rem; }
-                .thresh-block-compact .thresh-cell { padding: 10px 6px; font-size: 0.95rem; }
-                .thresh-block-compact .thresh-cell .rate { font-size: 1rem; }
+                /* Compact Table (now full width, no scroll) */
+                .thresh-block-compact { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+                .thresh-block-compact .thresh-table { font-size: 1.05rem; width: 100%; }
+                .thresh-block-compact .thresh-pod-hdr { padding: 14px 18px; font-size: 1rem; min-width: 120px; }
+                .thresh-block-compact .thresh-tier-hdr { padding: 14px 16px; font-size: 1rem; }
+                .thresh-block-compact .thresh-sub { padding: 10px 8px; font-size: 0.9rem; }
+                .thresh-block-compact .thresh-pod { padding: 14px 16px; font-size: 1rem; }
+                .thresh-block-compact .thresh-cell { padding: 14px 10px; font-size: 1rem; }
+                .thresh-block-compact .thresh-cell .rate { font-size: 1.05rem; }
             </style>
 
             <div class="thresh-wrapper">
