@@ -126,12 +126,14 @@
                         <div class="text-blue-100 text-xs">Total Bookings</div>
                     </div>
                     <div class="bg-gradient-to-br from-emerald-500 to-emerald-600 text-white rounded-lg p-4 text-center">
-                        <div class="text-2xl font-bold">142</div>
-                        <div class="text-emerald-100 text-xs">20' TEU</div>
+                        <div class="text-2xl font-bold">241</div>
+                        <div class="text-blue-100 text-xs">20' TEU</div>
+
                     </div>
                     <div class="bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-lg p-4 text-center">
-                        <div class="text-2xl font-bold">846</div>
+                        <div class="text-2xl font-bold">532</div>
                         <div class="text-purple-100 text-xs">40' FEU</div>
+
                     </div>
                     <div class="bg-gradient-to-br from-indigo-500 to-indigo-600 text-white rounded-lg p-4 text-center">
                         <div class="text-2xl font-bold">1,305</div>
@@ -224,6 +226,57 @@
                                     <tr class="bg-red-50"><td class="p-2 font-medium text-red-700">Spot</td><td class="p-2 text-center">20</td><td class="p-2 text-center">80</td><td class="p-2 text-center">73</td><td class="p-2 text-center font-bold">173 (17.5%)</td></tr>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/95 backdrop-blur rounded-xl shadow-lg p-6 mb-6 border border-slate-200">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-800">Management Analysis</h3>
+                            <p class="text-sm text-slate-500 mt-1">More analysis and improvement suggestions for management review</p>
+                        </div>
+                        <div class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-600">Action Focus</div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5">
+                        <div class="rounded-xl border border-blue-200 bg-blue-50 p-4">
+                            <div class="text-xs font-semibold text-blue-700 uppercase tracking-wide mb-2">CNSHA</div>
+                            <div class="text-sm text-slate-700 leading-6">
+                                Structure is the healthiest among the 3 ports. <strong>T1 = 74.0%</strong> of TEU and <strong>Spot = 5.1%</strong>, so the priority is not rescue but scale discipline.
+                            </div>
+                        </div>
+                        <div class="rounded-xl border border-red-200 bg-red-50 p-4">
+                            <div class="text-xs font-semibold text-red-700 uppercase tracking-wide mb-2">CNSHK</div>
+                            <div class="text-sm text-slate-700 leading-6">
+                                Mix quality is under pressure. <strong>Spot = 32.7%</strong> of TEU, which is even higher than FAK and far above T1/T2, so the issue is quality of cargo mix, not volume alone.
+                            </div>
+                        </div>
+                        <div class="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+                            <div class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-2">CNNAS</div>
+                            <div class="text-sm text-slate-700 leading-6">
+                                Conversion opportunity is the main theme. <strong>T2 = 39.7%</strong> and <strong>T1 = 0%</strong>, meaning there is buying power but almost no premium lock-in yet.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                        <div class="rounded-xl border border-amber-200 bg-amber-50 p-5">
+                            <h4 class="text-sm font-bold text-amber-800 mb-3">What needs attention now</h4>
+                            <ul class="space-y-3 text-sm text-slate-700 leading-6">
+                                <li><strong>1. CNSHK Spot exposure is the biggest drag.</strong> With 80 TEU in Spot, this is the clearest short-term margin leakage point.</li>
+                                <li><strong>2. CNNAS has conversion upside.</strong> T2 base is already large enough to support an upgrade program into T1.</li>
+                                <li><strong>3. CNSHA should be protected.</strong> Avoid letting healthy T1 cargo slide back into tactical discounting just to chase extra volume.</li>
+                            </ul>
+                        </div>
+                        <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
+                            <h4 class="text-sm font-bold text-slate-800 mb-3">Suggested improvement actions</h4>
+                            <ul class="space-y-3 text-sm text-slate-700 leading-6">
+                                <li><strong>CNSHA:</strong> identify the most stable T1 / near-T1 accounts and push annual or semi-committed FAK conversion.</li>
+                                <li><strong>CNSHK:</strong> split Spot cargo by POD and customer, then target the repeat Spot accounts for <strong>Spot → T2</strong> migration first.</li>
+                                <li><strong>CNNAS:</strong> launch a trial program on the strongest T2 customers to test <strong>T2 → T1</strong> upgrade thresholds.</li>
+                                <li><strong>Commercial control:</strong> review all Spot-heavy pods weekly and flag any lane where Spot exceeds 25% of total TEU.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -3224,120 +3277,63 @@
         
         <div id="tab-thresholds" class="tab-content hidden">
             <style>
-                /* Thresholds Enhanced Styles */
-                .thresh-wrapper { max-width: 1200px; margin: 0 auto; }
-                .thresh-header { background: linear-gradient(135deg, #1e3a5f 0%, #0f2744 100%); padding: 24px; border-radius: 16px 16px 0 0; color: white; text-align: center; margin-bottom: 0; }
-                .thresh-header h2 { margin: 0 0 8px 0; font-size: 1.5rem; font-weight: 700; }
-                .thresh-header p { margin: 0; opacity: 0.85; font-size: 0.9rem; }
-                
-                /* Legend Cards */
-                .thresh-legend { display: flex; justify-content: center; gap: 16px; padding: 16px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; flex-wrap: wrap; }
-                .thresh-legend-item { display: flex; align-items: center; gap: 8px; padding: 10px 18px; background: white; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); font-size: 1rem; font-weight: 600; }
-                .thresh-legend-dot { width: 20px; height: 20px; border-radius: 5px; }
-                .legend-fak { background: #22c55e; }
-                .legend-t2 { background: #f59e0b; }
-                .legend-t1 { background: #6366f1; }
-                .legend-spot { background: #ef4444; }
-                
-                /* Block Styles */
-                .thresh-block { margin-bottom: 28px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.12); background: white; }
-                .thresh-title { display: flex; align-items: center; gap: 12px; padding: 16px 24px; color: #fff; }
-                .thresh-title-icon { font-size: 24px; }
-                .thresh-title-main { font-size: 1.3rem; font-weight: 700; letter-spacing: 0.02em; }
-                .thresh-title-sub { font-size: 0.9rem; opacity: 0.85; padding-left: 12px; border-left: 1px solid rgba(255,255,255,0.3); }
-                
-                /* Table Styles */
-                .thresh-table { width: 100%; border-collapse: collapse; background: #fff; font-size: 1.05rem; }
-                .thresh-pod-hdr { padding: 14px 16px; text-align: left; font-weight: 700; font-size: 1rem; background: #f1f5f9; border-bottom: 2px solid #e2e8f0; color: #475569; }
-                .thresh-tier-hdr { padding: 14px 12px; text-align: center; font-weight: 700; font-size: 1rem; border-bottom: 2px solid #e2e8f0; color: white; }
-                .fak-hdr  { background: linear-gradient(135deg, #22c55e, #16a34a); }
-                .t2-hdr   { background: linear-gradient(135deg, #f59e0b, #d97706); }
-                .t1-hdr   { background: linear-gradient(135deg, #3b82f6, #2563eb); }
-                .spot-hdr { background: linear-gradient(135deg, #ef4444, #dc2626); }
-                .thresh-sub { padding: 8px 6px; text-align: center; font-size: 0.8rem; font-weight: 600; border-bottom: 1px solid #e0e0e0; }
-                .thresh-pod { padding: 14px 16px; font-size: 0.88rem; font-weight: 700; color: #1e293b; border-bottom: 1px solid #f1f5f9; background: #fafbfc; white-space: pre-line; line-height: 1.5; vertical-align: middle; }
-                .thresh-row { transition: all 0.2s ease; }
-                .thresh-row:hover { background: #f8fafc !important; transform: scale(1.005); }
-                .thresh-row:hover .thresh-pod { background: #e3f2fd !important; }
-                .thresh-cell { padding: 14px 10px; text-align: center; font-size: 0.88rem; border-bottom: 1px solid #f1f5f9; vertical-align: middle; line-height: 1.4; }
-                .thresh-cell.fak  { background: linear-gradient(180deg, #f0fdf4, #dcfce7); color: #15803d; font-weight: 700; border-left: 3px solid #22c55e; }
-                .thresh-cell.t2   { background: linear-gradient(180deg, #fffbeb, #fef3c7); color: #b45309; font-weight: 600; border-left: 3px solid #f59e0b; }
-                .thresh-cell.t1   { background: linear-gradient(180deg, #eff6ff, #dbeafe); color: #1d4ed8; font-weight: 700; border-left: 3px solid #3b82f6; }
-                .thresh-cell.spot { background: linear-gradient(180deg, #fef2f2, #fee2e2); color: #b91c1c; font-weight: 600; border-left: 3px solid #ef4444; }
-                .thresh-cell .rate { font-size: 1rem; font-weight: 700; }
-                .thresh-cell .label { font-size: 0.7rem; opacity: 0.7; display: block; }
-                
-                /* Single Column Layout */
-                .thresh-grid { display: flex; flex-direction: column; gap: 28px; margin-top: 20px; }
-                
-                /* Footer Note */
-                .thresh-footer { background: #1e293b; color: #94a3b8; padding: 16px 24px; border-radius: 0 0 16px 16px; font-size: 0.8rem; text-align: center; }
-                .thresh-footer strong { color: #e2e8f0; }
-                
-                /* Compact Table (now full width, no scroll) */
-                .thresh-block-compact { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
-                .thresh-block-compact .thresh-table { font-size: 1.05rem; width: 100%; }
-                .thresh-block-compact .thresh-pod-hdr { padding: 14px 18px; font-size: 1rem; min-width: 120px; }
-                .thresh-block-compact .thresh-tier-hdr { padding: 14px 16px; font-size: 1rem; }
-                .thresh-block-compact .thresh-sub { padding: 10px 8px; font-size: 0.9rem; }
-                .thresh-block-compact .thresh-pod { padding: 14px 16px; font-size: 1rem; }
-                .thresh-block-compact .thresh-cell { padding: 14px 10px; font-size: 1rem; }
-                .thresh-block-compact .thresh-cell .rate { font-size: 1.05rem; }
+                .thresh-block { margin-bottom: 28px; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.10); }
+                .thresh-title { display: flex; align-items: baseline; gap: 10px; padding: 12px 18px; color: #fff; }
+                .thresh-title-main { font-size: 1.15rem; font-weight: 700; letter-spacing: 0.03em; }
+                .thresh-title-sub  { font-size: 0.85rem; opacity: 0.80; }
+                .thresh-table { width: 100%; border-collapse: collapse; background: #fff; }
+                .thresh-pod-hdr { padding: 8px 10px; text-align: left; font-weight: 600; font-size: 0.82rem; background: #f0f0f0; border-bottom: 2px solid #ddd; min-width: 80px; }
+                .thresh-tier-hdr { padding: 8px 4px; text-align: center; font-weight: 700; font-size: 0.85rem; border-bottom: 2px solid #ddd; }
+                .fak-hdr  { background: #1b5e20; color: #fff; }
+                .t2-hdr   { background: #e65100; color: #fff; }
+                .t1-hdr   { background: #1565c0; color: #fff; }
+                .spot-hdr { background: #b71c1c; color: #fff; }
+                .thresh-sub { padding: 4px 6px; text-align: center; font-size: 0.75rem; font-weight: 600; border-bottom: 1px solid #e0e0e0; }
+                .thresh-pod { padding: 10px 10px; font-size: 0.82rem; font-weight: 600; color: #333; border-bottom: 1px solid #eee; white-space: pre-line; line-height: 1.4; vertical-align: middle; }
+                .thresh-row:hover td { background: #f9f9f9 !important; }
+                .thresh-cell { padding: 10px 8px; text-align: center; font-size: 0.82rem; border-bottom: 1px solid #eee; vertical-align: middle; line-height: 1.35; }
+                .thresh-cell.fak  { background: #f1f8e9; color: #2e7d32; font-weight: 600; }
+                .thresh-cell.t2   { background: #fff3e0; color: #e65100; }
+                .thresh-cell.t1   { background: #e3f2fd; color: #1565c0; font-weight: 600; }
+                .thresh-cell.spot { background: #ffebee; color: #c62828; }
+                .legend-dot { display:inline-block; width:11px; height:11px; border-radius:50%; margin-right:4px; vertical-align:middle; }
             </style>
 
-            <div class="thresh-wrapper">
-                <!-- Header -->
-                <div class="thresh-header">
-                    <h2>📊 Rate Tier Thresholds</h2>
-                    <p>运价等级阈值定义 · FAK / T2 / T1 / Spot 分级标准</p>
-                </div>
-                
-                <!-- Legend Cards -->
-                <div class="thresh-legend">
-                    <div class="legend-card fak">
-                        <div class="legend-icon">💎</div>
-                        <div class="legend-text"><strong>FAK</strong><span>协议运价</span></div>
-                    </div>
-                    <div class="legend-card t2">
-                        <div class="legend-icon">📈</div>
-                        <div class="legend-text"><strong>T2</strong><span>次级运价</span></div>
-                    </div>
-                    <div class="legend-card t1">
-                        <div class="legend-icon">🏆</div>
-                        <div class="legend-text"><strong>T1</strong><span>战略客户</span></div>
-                    </div>
-                    <div class="legend-card spot">
-                        <div class="legend-icon">⚡</div>
-                        <div class="legend-text"><strong>Spot</strong><span>市场运价</span></div>
-                    </div>
-                </div>
+            <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:12px;">Rate Tier Thresholds</h2>
 
-            <!-- Three Column Grid -->
-            <div class="thresh-grid">
+            <!-- Legend -->
+            <div style="display:flex;gap:18px;margin-bottom:18px;font-size:0.85rem;align-items:center;">
+                <span><span class="legend-dot" style="background:#2e7d32;"></span>FAK</span>
+                <span><span class="legend-dot" style="background:#f59e0b;"></span>T2</span>
+                <span><span class="legend-dot" style="background:#1565c0;"></span>T1</span>
+                <span><span class="legend-dot" style="background:#c62828;"></span>Spot</span>
+            </div>
+
+            
+    <div class="thresh-block">
+        <!-- POL Title Bar -->
+        <div class="thresh-title" style="background:#1565C0;">
+            <span class="thresh-title-main">CNSHA</span>
+            <span class="thresh-title-sub">Shanghai</span>
+        </div>
+        <table class="thresh-table">
+            <thead>
+                <tr>
+                    <th class="thresh-pod-hdr">POD</th>
+                    <th colspan="2" class="thresh-tier-hdr fak-hdr">FAK</th>
+                    <th colspan="2" class="thresh-tier-hdr t2-hdr">T2</th>
+                    <th colspan="2" class="thresh-tier-hdr t1-hdr">T1</th>
+                    <th colspan="2" class="thresh-tier-hdr spot-hdr">Spot</th>
+                </tr>
                 
-                <!-- CNSHA Table -->
-                <div class="thresh-block-compact">
-                    <div class="thresh-title" style="background:#1565C0;">
-                        <span class="thresh-title-main">CNSHA</span>
-                        <span class="thresh-title-sub">Shanghai</span>
-                    </div>
-                    <table class="thresh-table">
-                        <thead>
-                            <tr>
-                                <th class="thresh-pod-hdr">POD</th>
-                                <th colspan="2" class="thresh-tier-hdr fak-hdr">FAK</th>
-                                <th colspan="2" class="thresh-tier-hdr t2-hdr">T2</th>
-                                <th colspan="2" class="thresh-tier-hdr t1-hdr">T1</th>
-                                <th colspan="2" class="thresh-tier-hdr spot-hdr">Spot</th>
-                            </tr>
-                            <tr style="background:#f5f5f5;">
-                                <td class="thresh-pod"></td>
-                                <td class="thresh-sub" style="color:#2e7d32;">20'</td><td class="thresh-sub" style="color:#2e7d32;">40'</td>
-                                <td class="thresh-sub" style="color:#e65100;">20'</td><td class="thresh-sub" style="color:#e65100;">40'</td>
-                                <td class="thresh-sub" style="color:#1565c0;">20'</td><td class="thresh-sub" style="color:#1565c0;">40'</td>
-                                <td class="thresh-sub" style="color:#c62828;">20'</td><td class="thresh-sub" style="color:#c62828;">40'</td>
-                            </tr>
-                        </thead>
+        <tr style="background:#f5f5f5;">
+            <td class="thresh-pod"></td>
+            <td class="thresh-sub" style="color:#2e7d32;">20'</td><td class="thresh-sub" style="color:#2e7d32;">40'</td>
+            <td class="thresh-sub" style="color:#e65100;">20'</td><td class="thresh-sub" style="color:#e65100;">40'</td>
+            <td class="thresh-sub" style="color:#1565c0;">20'</td><td class="thresh-sub" style="color:#1565c0;">40'</td>
+            <td class="thresh-sub" style="color:#c62828;">20'</td><td class="thresh-sub" style="color:#c62828;">40'</td>
+        </tr>
+            </thead>
             <tbody>
                 
         <tr class="thresh-row">
@@ -3387,9 +3383,8 @@
             </tbody>
         </table>
     </div>
-    
-    <!-- CNSHK Table -->
-    <div class="thresh-block-compact">
+    <div class="thresh-block">
+        <!-- POL Title Bar -->
         <div class="thresh-title" style="background:#6A1B9A;">
             <span class="thresh-title-main">CNSHK</span>
             <span class="thresh-title-sub">Shenzhen</span>
@@ -3483,9 +3478,8 @@
             </tbody>
         </table>
     </div>
-    
-    <!-- CNNAS Table -->
-    <div class="thresh-block-compact">
+    <div class="thresh-block">
+        <!-- POL Title Bar -->
         <div class="thresh-title" style="background:#00695C;">
             <span class="thresh-title-main">CNNAS</span>
             <span class="thresh-title-sub">Nansha</span>
@@ -3499,15 +3493,17 @@
                     <th colspan="2" class="thresh-tier-hdr t1-hdr">T1</th>
                     <th colspan="2" class="thresh-tier-hdr spot-hdr">Spot</th>
                 </tr>
-                <tr style="background:#f5f5f5;">
-                    <td class="thresh-pod"></td>
-                    <td class="thresh-sub" style="color:#2e7d32;">20'</td><td class="thresh-sub" style="color:#2e7d32;">40'</td>
-                    <td class="thresh-sub" style="color:#e65100;">20'</td><td class="thresh-sub" style="color:#e65100;">40'</td>
-                    <td class="thresh-sub" style="color:#1565c0;">20'</td><td class="thresh-sub" style="color:#1565c0;">40'</td>
-                    <td class="thresh-sub" style="color:#c62828;">20'</td><td class="thresh-sub" style="color:#c62828;">40'</td>
-                </tr>
+                
+        <tr style="background:#f5f5f5;">
+            <td class="thresh-pod"></td>
+            <td class="thresh-sub" style="color:#2e7d32;">20'</td><td class="thresh-sub" style="color:#2e7d32;">40'</td>
+            <td class="thresh-sub" style="color:#e65100;">20'</td><td class="thresh-sub" style="color:#e65100;">40'</td>
+            <td class="thresh-sub" style="color:#1565c0;">20'</td><td class="thresh-sub" style="color:#1565c0;">40'</td>
+            <td class="thresh-sub" style="color:#c62828;">20'</td><td class="thresh-sub" style="color:#c62828;">40'</td>
+        </tr>
             </thead>
             <tbody>
+                
         <tr class="thresh-row">
             <td class="thresh-pod">SAJED /<br>EGSOK</td>
             <td class="thresh-cell fak">&ge;$3,000</td>
@@ -3555,13 +3551,6 @@
             </tbody>
         </table>
     </div>
-    
-    </div> <!-- End thresh-grid -->
-            
-            <!-- Footer Note -->
-            <div class="thresh-footer">
-                <strong>📌 说明:</strong> 运价以 <strong>USD/TEU</strong> 为单位 · FAK ≥ 阈值上限 · T1 为单一固定值 · Spot < T1 阈值
-            </div>
         </div>
         
         <div id="tab-t1" class="tab-content hidden">
@@ -4189,7 +4178,42 @@
     </style>
     
     <script>
+        var reportInsights = {
+            totalBLs: 409,
+            totalBookings: 345,
+            totalTEU: 1305,
+            chinaTEU: 1010,
+            seaTEU: 295,
+            teu20: 199,
+            teu40: 1106,
+            tierBaseTEU: 988,
+            tierTotal: { fak: 240, t1: 338, t2: 237, spot: 173 },
+            ports: {
+                cnsha: { name: 'CNSHA', teu: 393, teu20: 53, teu40: 340, fak: 30, t1: 291, t2: 52, spot: 20, posture: '最稳的利润结构' },
+                cnshk: { name: 'CNSHK', teu: 245, teu20: 51, teu40: 194, fak: 72, t1: 47, t2: 46, spot: 80, posture: 'Spot 压力最大' },
+                cnnas: { name: 'CNNAS', teu: 350, teu20: 38, teu40: 312, fak: 138, t1: 0, t2: 139, spot: 73, posture: '最值得升级' }
+            }
+        };
+
+        function aiPct(value, total) {
+            return total ? ((value / total) * 100).toFixed(1) : '0.0';
+        }
+
+        function aiHealthScore(port) {
+            var premium = ((port.fak + port.t1) / port.teu) * 100;
+            var spotPenalty = ((port.spot / port.teu) * 100) * 0.9;
+            var sizeBonus = ((port.teu40 / port.teu) * 100) * 0.15;
+            return Math.max(45, Math.min(95, Math.round(premium + sizeBonus + 25 - spotPenalty)));
+        }
+
+        function aiBadge(score) {
+            if (score >= 85) return '<span style="background:#dcfce7;color:#166534;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;">Healthy</span>';
+            if (score >= 70) return '<span style="background:#fef3c7;color:#92400e;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;">Watch</span>';
+            return '<span style="background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;">Urgent</span>';
+        }
+
         var aiPanelOpen = false;
+
         
         function toggleAI() {
             var panel = document.getElementById('ai-panel');
@@ -4236,12 +4260,114 @@
             answerDiv.style.display = 'block';
             
             setTimeout(function() {
-                contentDiv.innerHTML = getAIResponse(q);
+                try {
+                    var result = getAIResponse(q);
+                    contentDiv.innerHTML = result || '<div style="padding:16px;color:#475569;font-size:12px;line-height:1.7;">我收到你的问题了，但这次没有生成内容。你可以换个问法，或者直接问我 CNSHA / CNSHK / CNNAS / summary / risk / market update。</div>';
+                } catch (err) {
+                    contentDiv.innerHTML = '<div style="background:#fef2f2;padding:16px;border-radius:12px;border-left:4px solid #ef4444;"><strong style="color:#b91c1c;font-size:15px;">⚠️ AI 助手</strong><hr style="margin:12px 0;border:none;border-top:1px solid #fecaca;"><div style="background:white;padding:10px;border-radius:8px;font-size:12px;color:#334155;line-height:1.7;">这次回答没有成功跑出来。我已经捕捉到错误，你可以再试一次，或直接问我 summary、risk、market update、CNSHA / CNSHK / CNNAS。<div style="margin-top:8px;color:#94a3b8;font-size:11px;">Error: ' + String(err.message || err) + '</div></div></div>';
+                }
             }, 600);
         }
         
         function getAIResponse(msg) {
             var m = msg.toLowerCase();
+            var aiConversationState = window.aiConversationState || { lastTopic: null, greeted: false };
+            window.aiConversationState = aiConversationState;
+
+            function detectTopic(text) {
+                if (text.includes('cnsha') || text.includes('shanghai')) return 'cnsha';
+                if (text.includes('cnshk') || text.includes('hong kong') || text.includes('hk')) return 'cnshk';
+                if (text.includes('cnnas') || text.includes('nansha')) return 'cnnas';
+                return null;
+            }
+
+            function greetingReply(text) {
+                if (text.includes('good morning')) return 'Good morning Elaine ☀️ 我在。今天想先看哪个 port？';
+                if (text.includes('good afternoon')) return 'Good afternoon Elaine 🌤️ 我在，今天先看 summary 还是某个 port？';
+                if (text.includes('good evening')) return 'Good evening Elaine 🌙 我在，要不要我先帮你抓重点？';
+                if (text === 'hello' || text === 'hey' || text === 'yo' || text === 'hiya' || text === '哈喽') return 'Hello Elaine 👋 我在，直接跟我说你想看什么。';
+                if (text === 'hi' || text === '你好' || text === '嗨') {
+                    return aiConversationState.greeted ? 'Hi again Elaine 👋 继续，我在听。' : 'Hi Elaine 👋 我在。你可以直接问我 summary、risk，或者某个 port。';
+                }
+                return '';
+            }
+
+            function smallTalkReply(text) {
+                if (text.includes('how are you') || text.includes('how are u') || text.includes('你好吗') || text.includes('最近好吗')) {
+                    return 'I am good — and ready. 你要我帮你看 summary、risk，还是某个 port？';
+                }
+                if (text.includes('thanks') || text.includes('thank you') || text.includes('谢谢') || text.includes('thx')) {
+                    return '不客气 Elaine 🙂 你继续问，我会直接回你。';
+                }
+                if (text.includes('bye') || text.includes('goodbye') || text.includes('拜拜')) {
+                    return 'Bye Elaine 👋 有需要再叫我。';
+                }
+                if (text === 'ok' || text === 'okay' || text === 'sure' || text === '好') {
+                    return '好，继续。你想看 summary、compare，还是某个 port？';
+                }
+                return '';
+            }
+
+            function wrapSimpleReply(title, body, tone) {
+                var styles = {
+                    purple: ['#eef2ff', '#6366f1', '#4338ca', '#c7d2fe'],
+                    blue: ['#eff6ff', '#2563eb', '#1d4ed8', '#93c5fd'],
+                    green: ['#f0fdf4', '#16a34a', '#15803d', '#86efac'],
+                    gray: ['#f8fafc', '#94a3b8', '#475569', '#cbd5e1']
+                };
+                var s = styles[tone] || styles.purple;
+                return '<div style="background:' + s[0] + ';padding:16px;border-radius:12px;border-left:4px solid ' + s[1] + ';"><strong style="color:' + s[2] + ';font-size:15px;">' + title + '</strong><hr style="margin:12px 0;border:none;border-top:1px solid ' + s[3] + ';"><div style="background:white;padding:10px;border-radius:8px;font-size:12px;color:#334155;line-height:1.7;">' + body + '</div></div>';
+            }
+
+            function directAnswer(text) {
+                var currentTopic = detectTopic(text);
+                if (currentTopic) aiConversationState.lastTopic = currentTopic;
+                var activeTopic = currentTopic || aiConversationState.lastTopic;
+
+                var greet = greetingReply(text);
+                if (greet) {
+                    aiConversationState.greeted = true;
+                    return wrapSimpleReply('👋 AI 助手', greet, 'purple');
+                }
+
+                var smallTalk = smallTalkReply(text);
+                if (smallTalk) return wrapSimpleReply('💬 AI 助手', smallTalk, 'blue');
+
+                if ((text.includes('why') || text.includes('为什么')) && activeTopic === 'cnsha') {
+                    return wrapSimpleReply('🚢 CNSHA Why', '因为 CNSHA 的结构最稳：T1 占比高、Spot 很低，所以它不是靠短期价格战撑起来的，而是靠较健康的客户和价格结构在支撑。', 'blue');
+                }
+                if ((text.includes('why') || text.includes('为什么')) && activeTopic === 'cnshk') {
+                    return wrapSimpleReply('🚢 CNSHK Why', '因为 CNSHK 的 Spot 暴露偏高，mix quality 被拉坏，所以利润体感会差，不是 volume 不够，而是结构不够稳。', 'blue');
+                }
+                if ((text.includes('why') || text.includes('为什么')) && activeTopic === 'cnnas') {
+                    return wrapSimpleReply('🚢 CNNAS Why', '因为 CNNAS 有不错的 T2 基础，但没有 T1，所以说明客户承接力存在，却还没被升级成更高质量的价格层。', 'blue');
+                }
+
+                if ((text.includes('what should i do') || text.includes('怎么办') || text.includes('next step') || text.includes('下一步')) && activeTopic === 'cnshk') {
+                    return wrapSimpleReply('🎯 CNSHK Next Step', '先拆 POD 和客户层级，找出重复出现的 Spot 客户，再优先推进 Spot → T2，而不是平均用力。', 'green');
+                }
+                if ((text.includes('what should i do') || text.includes('怎么办') || text.includes('next step') || text.includes('下一步')) && activeTopic === 'cnnas') {
+                    return wrapSimpleReply('🎯 CNNAS Next Step', '从最稳定的 T2 客户中挑一批做升级测试，验证哪些客户能被推到 T1，而不是继续停留在中间层。', 'green');
+                }
+                if ((text.includes('what should i do') || text.includes('怎么办') || text.includes('next step') || text.includes('下一步')) && activeTopic === 'cnsha') {
+                    return wrapSimpleReply('🎯 CNSHA Next Step', '重点不是救火，而是守住现有结构，并把最稳定客户进一步往 FAK 或更高质量承诺价去推。', 'green');
+                }
+
+                return wrapSimpleReply('💬 AI 助手', '我收到了：<strong>' + text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</strong><br><br>你可以直接问我：summary、risk、market update，或者指定某个 port，例如 CNSHA / CNSHK / CNNAS。', 'gray');
+            }
+
+            function getMarketUpdateReply() {
+                return '<div style="background:#ecfeff;padding:16px;border-radius:12px;border-left:4px solid #06b6d4;"><strong style="color:#0f766e;font-size:15px;">🌍 Market Update</strong><hr style="margin:12px 0;border:none;border-top:1px solid #67e8f9;"><div style="background:white;padding:10px;border-radius:8px;font-size:12px;color:#334155;line-height:1.7;"><ul style="margin:0 0 0 18px;"><li><strong>Red Sea / Suez</strong>：市场仍在看是否逐步恢复，若更多船回到红海，整体有效运力会释放，运价下行压力会更明显。</li><li><strong>Asia → Middle East</strong>：中东相关航线短期仍偏敏感，安全、保险和船期稳定性仍是客户关注点，所以市场不会一下子完全回归正常。</li><li><strong>Port / Equipment</strong>：就算航线恢复，港口和设备周转也更可能是渐进修复，不太会一夜之间完全顺畅。</li><li><strong>Rate direction</strong>：外部公开观点普遍偏向 <strong>先波动、后偏弱</strong>，除非出现新的拥堵、补库存或突发扰动来支撑价格。</li><li><strong>What it means for us</strong>：对这份 report 来说，更要盯住 <strong>mix quality</strong>，因为当市场转弱时，Spot 会更容易压坏结构。</li></ul><div style="margin-top:10px;color:#64748b;">Source basis: recent public shipping market coverage in 2026 on Red Sea reopening risk, capacity normalization, and rate pressure.</div></div></div>';
+            }
+
+
+
+
+
+
+
+
+
             
             // CNSHA Analysis
             if (m.includes('cnsha') && (m.includes('teu') || m.includes('b/l') || m.includes('bl') || m.includes('数据') || m.includes('分析'))) {
@@ -4260,8 +4386,9 @@
             
             // Compare ports
             if ((m.includes('比较') || m.includes('compare') || m.includes('对比') || m.includes('对比分析')) && (m.includes('港口') || m.includes('port') || m.includes('三大') || m.includes('3'))) {
-                return '<div style="background: linear-gradient(135deg, #fef3c7, #dbeafe); padding: 16px; border-radius: 12px; border-left: 4px solid #f59e0b;"><strong style="color: #b45309; font-size: 15px;">⚖️ 三大港口对比分析</strong><hr style="margin: 12px 0; border: none; border-top: 1px solid #fcd34d;"><div style="background: white; padding: 12px; border-radius: 8px; margin-bottom: 12px;"><table style="width: 100%; font-size: 12px; border-collapse: collapse;"><tr style="background: #f1f5f9;"><th style="padding: 8px; text-align: left; border-bottom: 1px solid #e2e8f0;">指标</th><th style="padding: 8px; text-align: center; color: #0ea5e9;">CNSHA</th><th style="padding: 8px; text-align: center; color: #8b5cf6;">CNSHK</th><th style="padding: 8px; text-align: center; color: #22c55e;">CNNAS</th></tr><tr><td style="padding: 8px; border-bottom: 1px solid #e2e8f0;">B/L 数量</td><td style="padding: 8px; text-align: center; font-weight: 600;">126</td><td style="padding: 8px; text-align: center;">99</td><td style="padding: 8px; text-align: center;">106</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #e2e8f0;">Total TEU</td><td style="padding: 8px; text-align: center; font-weight: 600; color: #0ea5e9;">393 ⭐</td><td style="padding: 8px; text-align: center;">245</td><td style="padding: 8px; text-align: center; color: #22c55e;">350</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #e2e8f0;">40\' 占比</td><td style="padding: 8px; text-align: center;">86.5%</td><td style="padding: 8px; text-align: center;">79.2%</td><td style="padding: 8px; text-align: center; font-weight: 600; color: #22c55e;">89.1% ⭐</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #e2e8f0;">T1 占比</td><td style="padding: 8px; text-align: center; font-weight: 600; color: #4338ca;">71% ⭐</td><td style="padding: 8px; text-align: center;">19%</td><td style="padding: 8px; text-align: center; color: #94a3b8;">0%</td></tr><tr><td style="padding: 8px;">Spot 占比</td><td style="padding: 8px; text-align: center; color: #22c55e;">5% ⭐</td><td style="padding: 8px; text-align: center; font-weight: 600; color: #dc2626;">31%</td><td style="padding: 8px; text-align: center;">23%</td></tr></table></div><div style="background: #f0fdf4; padding: 10px; border-radius: 8px; font-size: 12px;"><strong style="color: #15803d;">🏆 综合评估:</strong><ul style="margin: 6px 0 0 0; padding-left: 16px; color: #166534;"><li><strong>CNSHA:</strong> TEU 规模最大，T1 占比最高，运价结构最优</li><li><strong>CNNAS:</strong> 40\' 占比最高，T2 运价稳定</li><li><strong>CNSHK:</strong> Spot 占比高，竞争激烈，需优化运价</li></ul></div></div>';
+                return '<div style="background: linear-gradient(135deg, #fef3c7, #dbeafe); padding: 16px; border-radius: 12px; border-left: 4px solid #f59e0b;"><strong style="color: #b45309; font-size: 15px;">⚖️ 三大港口对比分析</strong><hr style="margin: 12px 0; border: none; border-top: 1px solid #fcd34d;"><table style="width:100%;font-size:12px;border-collapse:collapse;background:white;border-radius:8px;overflow:hidden;margin-bottom:10px;"><tr style="background:#f8fafc;"><th style="padding:8px;text-align:left;border-bottom:1px solid #e2e8f0;">指标</th><th style="padding:8px;text-align:center;border-bottom:1px solid #e2e8f0;">CNSHA</th><th style="padding:8px;text-align:center;border-bottom:1px solid #e2e8f0;">CNSHK</th><th style="padding:8px;text-align:center;border-bottom:1px solid #e2e8f0;">CNNAS</th></tr><tr><td style="padding:8px;border-bottom:1px solid #e2e8f0;">TEU</td><td style="padding:8px;text-align:center;border-bottom:1px solid #e2e8f0;">393</td><td style="padding:8px;text-align:center;border-bottom:1px solid #e2e8f0;">245</td><td style="padding:8px;text-align:center;border-bottom:1px solid #e2e8f0;">350</td></tr><tr><td style="padding:8px;border-bottom:1px solid #e2e8f0;">Premium Mix</td><td style="padding:8px;text-align:center;border-bottom:1px solid #e2e8f0;">' + aiPct(reportInsights.ports.cnsha.fak + reportInsights.ports.cnsha.t1, reportInsights.ports.cnsha.teu) + '%</td><td style="padding:8px;text-align:center;border-bottom:1px solid #e2e8f0;">' + aiPct(reportInsights.ports.cnshk.fak + reportInsights.ports.cnshk.t1, reportInsights.ports.cnshk.teu) + '%</td><td style="padding:8px;text-align:center;border-bottom:1px solid #e2e8f0;">' + aiPct(reportInsights.ports.cnnas.fak + reportInsights.ports.cnnas.t1, reportInsights.ports.cnnas.teu) + '%</td></tr><tr><td style="padding:8px;border-bottom:1px solid #e2e8f0;">Spot Exposure</td><td style="padding:8px;text-align:center;border-bottom:1px solid #e2e8f0;color:#16a34a;">' + aiPct(reportInsights.ports.cnsha.spot, reportInsights.ports.cnsha.teu) + '%</td><td style="padding:8px;text-align:center;border-bottom:1px solid #e2e8f0;color:#dc2626;">' + aiPct(reportInsights.ports.cnshk.spot, reportInsights.ports.cnshk.teu) + '%</td><td style="padding:8px;text-align:center;border-bottom:1px solid #e2e8f0;color:#f59e0b;">' + aiPct(reportInsights.ports.cnnas.spot, reportInsights.ports.cnnas.teu) + '%</td></tr><tr><td style="padding:8px;">结论</td><td style="padding:8px;text-align:center;">守优势</td><td style="padding:8px;text-align:center;">先止血</td><td style="padding:8px;text-align:center;">可升级</td></tr></table><div style="background:#f8fafc;padding:10px;border-radius:8px;font-size:12px;color:#334155;"><strong>Bottom line:</strong> CNSHA 是样板，CNSHK 要止血，CNNAS 要升级。</div></div>';
             }
+
             
             // Total Overview
             if (m.includes('total') || (m.includes('总') && (m.includes('teu') || m.includes('bl') || m.includes('概览')))) {
@@ -4299,9 +4426,10 @@
             }
             
             // Executive Summary (行政总结)
-            if (m.includes('executive') && m.includes('summary') || m.includes('行政') || m.includes('高层总结')) {
-                return '<div style="background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%); padding: 16px; border-radius: 12px; color: white;"><strong style="font-size: 16px;">📋 Executive Summary</strong><hr style="margin: 10px 0; border: none; border-top: 1px solid rgba(255,255,255,0.2);"><div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; margin-bottom: 10px; font-size: 11px; line-height: 1.6;">本航次共处理 <strong>409 B/Ls</strong>，合计 <strong>1,305 TEU</strong>，来自 <strong>77 Bookings</strong>。<br>运价结构呈健康分布：<strong>T1+FAK 高端客户占 47%</strong>。</div><div style="background: rgba(255,255,255,0.95); padding: 10px; border-radius: 8px; margin-bottom: 10px; color: #1e1b4b;"><strong style="color: #4338ca;">🏆 核心成就</strong><ul style="margin: 6px 0 0 0; padding-left: 14px; font-size: 11px;"><li style="margin-bottom: 4px;">✅ <strong>CNSHA T1 占比 71%</strong> - 运价结构最优，协议客户稳固</li><li style="margin-bottom: 4px;">✅ <strong>40\' 箱占 84.8%</strong> - 大货量主导，规模效益显著</li><li style="margin-bottom: 4px;">✅ <strong>中国港口 TEU 占 77.4%</strong> - 核心市场地位稳固</li></ul></div><div style="background: rgba(239,68,68,0.2); padding: 10px; border-radius: 8px; margin-bottom: 10px;"><strong style="color: #fca5a5;">⚠️ 风险预警</strong><ul style="margin: 6px 0 0 0; padding-left: 14px; font-size: 11px; color: #fee2e2;"><li style="margin-bottom: 4px;">🚨 <strong>CNSHK Spot 31%</strong> - 市场竞争激烈，运价承压</li><li style="margin-bottom: 4px;">⚡ <strong>CNNAS 无 T1 Shipper</strong> - Tier 结构待优化</li></ul></div><div style="background: rgba(34,197,94,0.2); padding: 10px; border-radius: 8px;"><strong style="color: #86efac;">🎯 优先行动</strong><ol style="margin: 6px 0 0 0; padding-left: 14px; font-size: 11px; color: #d1fae5;"><li>优化 CNSHK Spot → T2 转化策略</li><li>开发 CNNAS T1 战略客户</li><li>深化 CNSHA FAK 客户关系</li></ol></div></div>';
+            if (m.includes('executive') && m.includes('summary') || m.includes('行政') || m.includes('高层总结') || m.includes('管理层') || m.includes('老板')) {
+                return '<div style="background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%); padding: 16px; border-radius: 12px; color: white;"><strong style="font-size: 16px;">📋 Executive Summary</strong><hr style="margin: 10px 0; border: none; border-top: 1px solid rgba(255,255,255,0.2);"><div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; margin-bottom: 10px; font-size: 11px; line-height: 1.7;">本航次不是 volume 不够，而是结构优化问题。中国港口占 <strong>' + aiPct(reportInsights.chinaTEU, reportInsights.totalTEU) + '%</strong>，Premium mix（FAK+T1）约 <strong>' + aiPct(reportInsights.tierTotal.fak + reportInsights.tierTotal.t1, reportInsights.tierBaseTEU) + '%</strong>，但 Spot 仍有 <strong>' + aiPct(reportInsights.tierTotal.spot, reportInsights.tierBaseTEU) + '%</strong>，压力主要在 CNSHK。</div><div style="background: rgba(255,255,255,0.95); padding: 10px; border-radius: 8px; margin-bottom: 10px; color: #1e1b4b;"><strong style="color: #4338ca;">🏆 结论</strong><ul style="margin: 6px 0 0 0; padding-left: 14px; font-size: 11px;"><li>CNSHA = 最稳的利润结构，适合作为 benchmark</li><li>CNSHK = 先止血，优先降 Spot 暴露</li><li>CNNAS = 最有升级空间，要把 T2 往 T1 拉</li></ul></div><div style="background: rgba(34,197,94,0.2); padding: 10px; border-radius: 8px;"><strong style="color: #86efac;">🎯 优先行动</strong><ol style="margin: 6px 0 0 0; padding-left: 14px; font-size: 11px; color: #d1fae5;"><li>先处理 CNSHK：按 POD / 客户分层降低 Spot</li><li>再处理 CNNAS：从 T2 客户挑升级试点</li><li>最后做 CNSHA：继续把稳定客户往 FAK 抬</li></ol></div></div>';
             }
+
             
             // Vessel Summary (航次总结)
             if (m.includes('航次') && (m.includes('总结') || m.includes('概览') || m.includes('summary'))) {
@@ -4310,13 +4438,15 @@
             
             // Improvement Suggestions (改进建议)
             if (m.includes('改进') || m.includes('建议') || m.includes('improve') || m.includes('optimize')) {
-                return '<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 16px; border-radius: 12px; border-left: 4px solid #f59e0b;"><strong style="color: #b45309; font-size: 15px;">💡 航次改进建议</strong><hr style="margin: 12px 0; border: none; border-top: 1px solid #fcd34d;"><div style="background: white; padding: 12px; border-radius: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;"><span style="background: #ef4444; color: white; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600;">紧急</span><strong style="color: #dc2626;">CNSHK Spot 占比 31% - 需优化运价结构</strong></div><div style="font-size: 12px; color: #64748b; padding-left: 24px;">→ 建议提升 T1/T2 客户比例，减少竞价压力</div></div><div style="background: white; padding: 12px; border-radius: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;"><span style="background: #f59e0b; color: white; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600;">重要</span><strong style="color: #d97706;">CNNAS 无 T1 Shipper - 需开发优质客户</strong></div><div style="font-size: 12px; color: #64748b; padding-left: 24px;">→ 南沙港需引进高运价战略客户，提升 FAK 占比</div></div><div style="background: white; padding: 12px; border-radius: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;"><span style="background: #22c55e; color: white; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600;">优化</span><strong style="color: #15803d;">CNSHA 保持优势 - 可进一步提升 FAK</strong></div><div style="font-size: 12px; color: #64748b; padding-left: 24px;">→ 71% T1 基础上，争取更多 FAK 客户</div></div><div style="background: #fef2f2; padding: 10px; border-radius: 8px; font-size: 12px;"><strong style="color: #dc2626;">🎯 优先行动项:</strong><ol style="margin: 6px 0 0 0; padding-left: 20px; color: #991b1b;"><li>香港港 Spot → T2 转化策略</li><li>南沙港 T1 客户开发计划</li><li>上海港 FAK 客户深耕</li></ol></div></div>';
+                return '<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 16px; border-radius: 12px; border-left: 4px solid #f59e0b;"><strong style="color: #b45309; font-size: 15px;">💡 航次改进建议</strong><hr style="margin: 12px 0; border: none; border-top: 1px solid #fcd34d;"><table style="width:100%;font-size:12px;border-collapse:collapse;background:white;border-radius:8px;overflow:hidden;margin-bottom:10px;"><tr style="background:#f8fafc;"><th style="padding:8px;text-align:left;border-bottom:1px solid #e2e8f0;">Port</th><th style="padding:8px;text-align:left;border-bottom:1px solid #e2e8f0;">问题</th><th style="padding:8px;text-align:left;border-bottom:1px solid #e2e8f0;">建议动作</th></tr><tr><td style="padding:8px;border-bottom:1px solid #e2e8f0;"><strong>CNSHK</strong></td><td style="padding:8px;border-bottom:1px solid #e2e8f0;">Spot 占比高，价格承压</td><td style="padding:8px;border-bottom:1px solid #e2e8f0;">先拆 POD 和客户层级，优先把可转客户从 Spot 拉到 T2。</td></tr><tr><td style="padding:8px;border-bottom:1px solid #e2e8f0;"><strong>CNNAS</strong></td><td style="padding:8px;border-bottom:1px solid #e2e8f0;">没有 T1 层</td><td style="padding:8px;border-bottom:1px solid #e2e8f0;">从主力 T2 客户里选升级试点，先做小范围提价。</td></tr><tr><td style="padding:8px;"><strong>CNSHA</strong></td><td style="padding:8px;">结构已好但仍可提 premium</td><td style="padding:8px;">把高稳定客户往 FAK 再抬，不只停在 T1。</td></tr></table><div style="background:#fff1f2;padding:10px;border-radius:8px;font-size:12px;color:#9f1239;margin-bottom:10px;"><strong>Why 先做 CNSHK？</strong> 因为它不是 volume 问题，而是 mix 被 Spot 拉坏。先修 mix，改善体感最快。</div><div style="background:#ecfeff;padding:10px;border-radius:8px;font-size:12px;color:#155e75;"><strong>报告还能继续升级：</strong><ul style="margin:6px 0 0 18px;"><li>加 Spot → T2 → T1 转化漏斗</li><li>加每个港口 health score</li><li>加 Top 3 action items</li></ul></div></div>';
             }
+
             
             // Rate Health Check (运价健康度)
-            if (m.includes('健康') || (m.includes('运价') && m.includes('健康')) || (m.includes('rate') && m.includes('health'))) {
-                return '<div style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); padding: 16px; border-radius: 12px; border-left: 4px solid #22c55e;"><strong style="color: #15803d; font-size: 15px;">❤️ 运价健康度评估</strong><hr style="margin: 12px 0; border: none; border-top: 1px solid #6ee7b7;"><div style="text-align: center; margin-bottom: 14px;"><div style="display: inline-block; width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #22c55e, #16a34a); display: flex; align-items: center; justify-content: center; flex-direction: column;"><span style="color: white; font-size: 28px; font-weight: bold;">78</span><span style="color: rgba(255,255,255,0.8); font-size: 10px;">分</span></div></div><div style="background: white; padding: 12px; border-radius: 8px; margin-bottom: 10px;"><table style="width: 100%; font-size: 12px;"><tr><td style="padding: 6px;">🚢 CNSHA</td><td style="text-align: right;"><span style="background: #dcfce7; padding: 2px 8px; border-radius: 10px; color: #15803d; font-weight: 600;">优秀 92分</span></td></tr><tr><td style="padding: 6px;">🚢 CNSHK</td><td style="text-align: right;"><span style="background: #fef3c7; padding: 2px 8px; border-radius: 10px; color: #b45309; font-weight: 600;">一般 65分</span></td></tr><tr><td style="padding: 6px;">🚢 CNNAS</td><td style="text-align: right;"><span style="background: #fef3c7; padding: 2px 8px; border-radius: 10px; color: #b45309; font-weight: 600;">良好 75分</span></td></tr></table></div><div style="background: #fef3c7; padding: 10px; border-radius: 8px; font-size: 12px;"><strong style="color: #b45309;">📋 诊断结论:</strong><ul style="margin: 6px 0 0 0; padding-left: 16px; color: #92400e;"><li>整体运价结构良好，T1+FAK 占 47%</li><li>CNSHK 需重点关注 Spot 占比</li><li>建议优化 CNSHK 运价体系</li></ul></div></div>';
+            if (m.includes('健康') || (m.includes('运价') && m.includes('健康')) || (m.includes('rate') && m.includes('health')) || m.includes('风险') || m.includes('risk')) {
+                return '<div style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); padding: 16px; border-radius: 12px; border-left: 4px solid #22c55e;"><strong style="color: #15803d; font-size: 15px;">❤️ 运价健康度评估</strong><hr style="margin: 12px 0; border: none; border-top: 1px solid #6ee7b7;"><table style="width:100%;font-size:12px;border-collapse:collapse;background:white;border-radius:8px;overflow:hidden;margin-bottom:10px;"><tr style="background:#f8fafc;"><th style="padding:8px;text-align:left;border-bottom:1px solid #e2e8f0;">Port</th><th style="padding:8px;text-align:center;border-bottom:1px solid #e2e8f0;">Health Score</th><th style="padding:8px;text-align:center;border-bottom:1px solid #e2e8f0;">Signal</th></tr><tr><td style="padding:8px;border-bottom:1px solid #e2e8f0;">CNSHA</td><td style="padding:8px;text-align:center;border-bottom:1px solid #e2e8f0;">' + aiHealthScore(reportInsights.ports.cnsha) + ' / 100</td><td style="padding:8px;text-align:center;border-bottom:1px solid #e2e8f0;">' + aiBadge(aiHealthScore(reportInsights.ports.cnsha)) + '</td></tr><tr><td style="padding:8px;border-bottom:1px solid #e2e8f0;">CNSHK</td><td style="padding:8px;text-align:center;border-bottom:1px solid #e2e8f0;">' + aiHealthScore(reportInsights.ports.cnshk) + ' / 100</td><td style="padding:8px;text-align:center;border-bottom:1px solid #e2e8f0;">' + aiBadge(aiHealthScore(reportInsights.ports.cnshk)) + '</td></tr><tr><td style="padding:8px;">CNNAS</td><td style="padding:8px;text-align:center;">' + aiHealthScore(reportInsights.ports.cnnas) + ' / 100</td><td style="padding:8px;text-align:center;">' + aiBadge(aiHealthScore(reportInsights.ports.cnnas)) + '</td></tr></table><div style="background:#fefce8;padding:10px;border-radius:8px;font-size:12px;color:#854d0e;"><strong>Interpretation:</strong> 最该救的是 <strong>CNSHK</strong>，最该守的是 <strong>CNSHA</strong>，最值得升级的是 <strong>CNNAS</strong>。</div></div>';
             }
+
             
             // Full Report Analysis (完整报告分析)
             if ((m.includes('完整') && m.includes('分析')) || (m.includes('full') && m.includes('report'))) {
@@ -4349,7 +4479,8 @@
             }
             
             // Default response
-            return '<div style="background: #f8fafc; padding: 16px; border-radius: 12px; border-left: 4px solid #94a3b8;"><strong style="color: #475569;">💡 试试这样问我:</strong><ul style="margin: 8px 0 0 0; padding-left: 20px; color: #64748b;"><li>"CNSHA 数据分析" - 查看详细数据</li><li>"三大港口对比" - 对比分析</li><li>"Spot Rate 详解" - 了解 Spot</li><li>"Tier 分类区别" - Tier 对比</li><li>"SEA 港口有哪些" - 市场概览</li><li>"运费怎么算" - 计算方式</li></ul></div>';
+            return directAnswer(msg);
+
         }
     </script>
     
@@ -4357,129 +4488,261 @@
         @keyframes spin { to { transform: rotate(360deg); } }
     </style>
     
-    <script>
-        // AI Response Engine (original functions kept for compatibility)
-        var chatOpen = false;
-        
-        function quickQuestion(question) {
-            askQuestion(question);
-        }
-        
-        function sendMessage() {
-            var input = document.getElementById('ai-input');
-            if (input) {
-                var msg = input.value.trim();
-                if (msg) {
-                    askQuestion(msg);
-                    input.value = '';
-                }
-            }
-        }
-        
-        // AI Response Engine (legacy)
-        function getAIResponseLegacy(message) {
-            var msg = message.toLowerCase();
-            
-            // Spot Rate
-            if (msg.includes('spot')) {
-                return '<strong>📊 Spot Rate (现货价)</strong><br><br>Spot Rate 是最低档位的运价分类。<br><br><strong>判定标准 (CNSHA 为例):</strong><br>• 20' 箱: &lt; <strong>$2,600</strong><br>• 40' 箱: &lt; <strong>$3,600</strong><br><br><em>注: 不同 POD 的阈值不同，详见 Thresholds 标签页</em>';
-            }
-            
-            // T1 / Tier
-            if (msg.includes('t1') || (msg.includes('tier') && !msg.includes('t2'))) {
-                return '<strong>📈 T1 Rate (T1 运价)</strong><br><br>T1 是次高档运价分类。<br><br><strong>判定标准 (CNSHA 为例):</strong><br>• 20' 箱: <strong>$2,600</strong> - $3,000<br>• 40' 箱: <strong>$3,600</strong> - $4,000<br><br><em>T1 通常是主流船公司协议价</em>';
-            }
-            
-            // T2
-            if (msg.includes('t2')) {
-                return '<strong>📉 T2 Rate (T2 运价)</strong><br><br>T2 是中高档运价分类。<br><br><strong>判定标准 (CNSHA 为例):</strong><br>• 20' 箱: <strong>$2,601</strong> - $2,999<br>• 40' 箱: <strong>$3,601</strong> - $3,999<br><br><em>介于 T1 和 Spot 之间</em>';
-            }
-            
-            // FAK
-            if (msg.includes('fak')) {
-                return '<strong>💎 FAK Rate (最高运价)</strong><br><br>FAK (Freight All Kinds) 是最高档运价分类。<br><br><strong>判定标准 (CNSHA 为例):</strong><br>• 20' 箱: ≥ <strong>$3,000</strong><br>• 40' 箱: ≥ <strong>$4,000</strong><br><br><em>仅少数高价值货物能达到此档位</em>';
-            }
-            
-            // CNSHA
-            if (msg.includes('cnsha') || msg.includes('shanghai')) {
-                return '<strong>🚢 CNSHA (上海港)</strong><br><br>• B/L 数量: <strong>126</strong><br>• 总 TEU: <strong>393</strong><br>• 主要 POD: JED, SOK, ADE<br><br><em>详细数据请查看 CNSHA 标签页</em>';
-            }
-            
-            // CNSHK
-            if (msg.includes('cnshk') || msg.includes('hong kong')) {
-                return '<strong>🚢 CNSHK (香港港)</strong><br><br>• B/L 数量: <strong>99</strong><br>• 总 TEU: <strong>245</strong><br>• 主要 POD: JED, SOK, RUH<br><br><em>详细数据请查看 CNSHK 标签页</em>';
-            }
-            
-            // CNNAS
-            if (msg.includes('cnnas') || msg.includes('nansha')) {
-                return '<strong>🚢 CNNAS (南沙港)</strong><br><br>• B/L 数量: <strong>106</strong><br>• 总 TEU: <strong>350</strong><br>• 主要 POD: SOK, ADE, PZU<br><br><em>详细数据请查看 CNNAS 标签页</em>';
-            }
-            
-            // CNSWA
-            if (msg.includes('cnswa') || (msg.includes('sahara') && msg.includes('west'))) {
-                return '<strong>🚢 CNSWA (撒哈拉西海岸)</strong><br><br>• B/L 数量: <strong>2</strong><br>• 总 TEU: <strong>22</strong><br>• POD: DXB, ATG<br><br><em>属于新增航线，数据较少</em>';
-            }
-            
-            // SEA / Taiwan
-            if (msg.includes('taiwan') || msg.includes('tw')) {
-                return '<strong>🌏 台湾港口 (TW)</strong><br><br>CNSHA 出发至台湾:<br>• POD 代码: TWKHH, TWKEL, TWTXG<br>• 运费按箱型计算<br><br><em>详细运价请查看 Freight Rate 标签页</em>';
-            }
-            
-            // Thailand
-            if (msg.includes('thailand') || msg.includes('泰国')) {
-                return '<strong>🌏 泰国港口 (TH)</strong><br><br>CNSHA 出发至泰国:<br>• POD 代码: THLCH, THSCS<br>• 运费按箱型计算<br><br><em>详细运价请查看 Freight Rate 标签页</em>';
-            }
-            
-            // Vietnam
-            if (msg.includes('vietnam') || msg.includes('越南') || msg.includes('vn')) {
-                return '<strong>🌏 越南港口 (VN)</strong><br><br>CNSHA 出发至越南:<br>• POD 代码: VNHPH (海防), VNSGN (胡志明)<br>• 运费按箱型计算<br><br><em>详细运价请查看 Freight Rate 标签页</em>';
-            }
-            
-            // Malaysia
-            if (msg.includes('malaysia') || msg.includes('马来西亚') || msg.includes('my')) {
-                return '<strong>🌏 马来西亚港口 (MY)</strong><br><br>CNSHA 出发至马来西亚:<br>• POD 代码: MYPEN<br>• 运费按箱型计算<br><br><em>详细运价请查看 Freight Rate 标签页</em>';
-            }
-            
-            // SEA general
-            if (msg.includes('sea') || msg.includes('东南亚')) {
-                return '<strong>🌏 SEA 东南亚港口</strong><br><br>报告涵盖以下 SEA 区域:<br>• 🇹🇼 Taiwan (TWKHH, TWKEL)<br>• 🇹🇭 Thailand (THLCH, THSCS)<br>• 🇻🇳 Vietnam (VNHPH, VNSGN)<br>• 🇲🇾 Malaysia (MYPEN)<br><br><em>详细运价请查看 Freight Rate 标签页</em>';
-            }
-            
-            // Total B/L
-            if (msg.includes('total') && (msg.includes('bl') || msg.includes('b/l') || msg.includes('total'))) {
-                return '<strong>📊 总体数据</strong><br><br>• Total B/Ls: <strong>333</strong><br>• Total Bookings: <strong>77</strong><br>• Total TEU: <strong>1,305</strong><br><br><em>中国港口 1,010 TEU + SEA 295 TEU</em>';
-            }
-            
-            // Freight Rate calculation
-            if (msg.includes('freight') && (msg.includes('rate') || msg.includes('费用') || msg.includes('价格') || msg.includes('运费'))) {
-                return '<strong>💰 运费计算方式</strong><br><br>运费 = OFT + LSS + WRS + BAF<br><br><strong>计算公式:</strong><br>(OFT + BAF + LSS + WRS) Charge Amount 总和 ÷ OFT TEUs<br><br><em>详见 Freight Rate 标签页</em>';
-            }
-            
-            // TEU
-            if (msg.includes('teu')) {
-                return '<strong>📦 TEU 说明</strong><br><br>TEU = Twenty-foot Equivalent Unit<br>• 20' 箱 = <strong>1 TEU</strong><br>• 40' 箱 = <strong>2 TEU</strong><br><br>报告总 TEU 包含所有箱型的 TEU 换算';
-            }
-            
-            // T1 Shipper
-            if (msg.includes('t1 shipper') || msg.includes('t1shipper') || msg.includes('货主')) {
-                return '<strong>👤 T1 Shipper (T1 货主)</strong><br><br>T1 Shipper 是运费达到 T1 档位的货主。<br><br><em>详细名单请查看 T1 Shipper 标签页</em>';
-            }
-            
-            // POD
-            if (msg.includes('pod') || msg.includes('目的港')) {
-                return '<strong>🏝️ POD (目的港)</strong><br><br>POD = Port of Destination<br><br>报告涵盖的主要 POD:<br>• JED (吉达)<br>• SOK (苏丹港)<br>• ADE (亚丁)<br>• RUH (利雅得)<br>• DJI (吉布提)<br><br><em>不同 POD 的 Tier 阈值不同</em>';
-            }
-            
-            // Threshold
-            if (msg.includes('threshold') || msg.includes('阈值') || msg.includes('门槛')) {
-                return '<strong>📋 Rate Tier 阈值</strong><br><br>各 POD 的 FAK/T1/T2/Spot 阈值:<br>• SAJED/EGSOK: 20'≥$3000, 40'≥$4000<br>• DJIJB: 20'≥$3100, 40'≥$4200<br>• JOAQJ: 20'≥$3200, 40'≥$4400<br><br><em>详细阈值请查看 Thresholds 标签页</em>';
-            }
-            
-            // How to use / Help
-            if (msg.includes('help') || msg.includes('帮助') || msg.includes('怎么用') || msg.includes('?') || msg.includes('？')) {
-                return '<strong>🆘 使用帮助</strong><br><br>你可以问我以下问题:<br><br>📊 <strong>数据查询:</strong><br>• "CNSHA 有多少 TEU?"<br>• "Total B/Ls 是多少?"<br>• "Spot rate 是什么?"<br><br>📈 <strong>Tier 分类:</strong><br>• "T1 和 FAK 的区别?"<br>• "T2 阈值是多少?"<br><br>🌏 <strong>港口信息:</strong><br>• "SEA 有哪些港口?"<br>• "越南的 POD 代码?"<br><br>💰 <strong>运费计算:</strong><br>• "运费怎么算?"<br>• "TEU 是什么?"';
-            }
-            
 
+
+
+    <!-- AI Chat Assistant -->
+
+    <div class="fixed bottom-6 right-6 z-50">
+        <button onclick="toggleChat()" id="chatToggle" class="bg-blue-600 text-white w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center text-xl font-bold border-4 border-white">
+            AI
+        </button>
+        <div id="chatBox" class="hidden absolute bottom-20 right-0 w-96 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
+            <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+                <div>
+                    <div class="font-bold text-lg">💬 Chat with Report</div>
+                    <div class="text-xs text-blue-100">Talk to me naturally</div>
+                </div>
+                <button onclick="toggleChat()" class="text-white hover:bg-blue-500 rounded p-2">✕</button>
+            </div>
+            <div id="chatMessages" class="h-80 overflow-y-auto p-4 space-y-3 bg-gray-50">
+                <div class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 max-w-[85%]">
+                    <p class="text-sm text-gray-700">Hi Elaine — you can just talk to me. Ask about summary, risk, market update, 20'/40', SEA, or simply say hi.</p>
+                </div>
+            </div>
+            <div class="p-3 border-t bg-white flex gap-2">
+                <input id="chatInput" type="text" placeholder="Type a message..."
+                    class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    onkeydown="if(event.key==='Enter') sendMessage()">
+                <button onclick="sendMessage()" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const reportInsights = {
+            overview: {
+                bl: 409,
+                bookings: 345,
+                teu: 1305,
+                teu20: 241,
+                feu40: 532,
+                chinaTeu: 1010,
+                seaTeu: 295
+            },
+            ports: {
+                cnsha: { bl: 126, bookings: 132, teu: 393, fak: 30, t1: 291, t2: 52, spot: 20 },
+                cnshk: { bl: 99, bookings: 103, teu: 245, fak: 72, t1: 47, t2: 46, spot: 80 },
+                cnnas: { bl: 106, bookings: 110, teu: 350, fak: 138, t1: 0, t2: 139, spot: 73 }
+            }
+        };
+
+        const chatState = {
+            lastTopic: null,
+            greeted: false
+        };
+
+        function toggleChat() {
+            const chatBox = document.getElementById('chatBox');
+            chatBox.classList.toggle('hidden');
+            if (!chatBox.classList.contains('hidden')) {
+                document.getElementById('chatInput').focus();
+            }
+        }
+
+        function addMessage(text, isUser = false) {
+            const chatMessages = document.getElementById('chatMessages');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'flex ' + (isUser ? 'justify-end' : 'justify-start');
+
+            const bubble = document.createElement('div');
+            bubble.className = (isUser
+                ? 'bg-blue-600 text-white'
+                : 'bg-white text-gray-700 border border-gray-100 shadow-sm') + ' max-w-[85%] rounded-xl px-3 py-2 text-sm leading-6';
+            bubble.innerHTML = text;
+
+            msgDiv.appendChild(bubble);
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function pct(val, total) {
+            return total > 0 ? ((val / total) * 100).toFixed(1) : '0.0';
+        }
+
+        function findTopic(msg) {
+            if (msg.includes('cnsha') || msg.includes('shanghai')) return 'cnsha';
+            if (msg.includes('cnshk') || msg.includes('hong kong') || msg.includes('hk')) return 'cnshk';
+            if (msg.includes('cnnas') || msg.includes('nansha')) return 'cnnas';
+            return null;
+        }
+
+        function getPortReply(topic) {
+            const p = reportInsights.ports[topic];
+            if (!p) return '';
+
+            if (topic === 'cnsha') {
+                return 'CNSHA 现在是最稳的结构。T1 占比 <strong>' + pct(p.t1, p.teu) + '%</strong>，Spot 占比 <strong>' + pct(p.spot, p.teu) + '%</strong>。重点不是救火，而是守住高质量货，再把稳定客户往 FAK 推。';
+            }
+            if (topic === 'cnshk') {
+                return 'CNSHK 的核心问题是 Spot 偏高。Spot 占比 <strong>' + pct(p.spot, p.teu) + '%</strong>，已经明显拉低结构质量。优先动作应该是把高频 Spot 客户做分层，先推动一部分转去 T2。';
+            }
+            if (topic === 'cnnas') {
+                return 'CNNAS 的亮点是 T2 很强，占比 <strong>' + pct(p.t2, p.teu) + '%</strong>；但 T1 还是 <strong>0</strong>。说明它有升级空间，下一步最值得做的是从稳定 T2 客户里挑 conversion target。';
+            }
+            return '';
+        }
+
+        function getComparisonReply() {
+            return '三港里面，<strong>CNSHA 最健康</strong>，因为 T1 基础最稳；<strong>CNSHK 风险最大</strong>，因为 Spot 暴露偏高；<strong>CNNAS 最有增长机会</strong>，因为 T2 很强但 T1 还没建立。';
+        }
+
+        function getOverviewReply() {
+            return '整体来看：<strong>Total B/Ls = 409</strong>，<strong>Total Bookings = 345</strong>，<strong>Total TEU = 1,305</strong>。其中 China = <strong>1,010 TEU</strong>，SEA = <strong>295 TEU</strong>。当前箱型拆分是 <strong>20\' = 241 TEU</strong>，<strong>40\' = 532 FEU</strong>。';
+        }
+
+        function getContainerReply() {
+            return '按当前报告口径，<strong>20\' = 241 TEU</strong>，<strong>40\' = 532 FEU</strong>，合计折算为 <strong>1,305 TEU</strong>。也就是 20 尺按 1 TEU 计，40 尺按 2 TEU 计。';
+        }
+
+        function getSeaReply() {
+            return 'SEA volume 已经计入总体 TEU。当前 SEA 合计 <strong>295 TEU</strong>，其中 <strong>TW = 77</strong>、<strong>TH = 139</strong>、<strong>VN = 79</strong>。如果你要，我也可以继续把 SEA 单独拆成一个 summary reply。';
+        }
+
+        function getMarketReply() {
+            return 'Market update 角度看，外部市场更值得盯的是 <strong>capacity normalization</strong> 和 <strong>rate pressure</strong>。如果 Red Sea / Suez 进一步恢复，运价下行压力会更明显，所以这份 report 更要守住 mix quality，尤其是 CNSHK 的 Spot 暴露。';
+        }
+
+
+        function getImproveReply(topic) {
+            if (topic === 'cnsha') return '如果是 CNSHA，我会先做两件事：1) 保护现有 T1，不让它滑去 T2 / Spot；2) 把重复出货但还没锁定的客户往 FAK 转。';
+            if (topic === 'cnshk') return '如果是 CNSHK，我建议先做 Spot 客户分层，再盯高频客户做 T2 conversion。先降 Spot，再谈更高 tier。';
+            if (topic === 'cnnas') return '如果是 CNNAS，我建议把重点放在 T2 → T1 升级。因为现在承接力已经有了，缺的是 premium tier 的建立。';
+            return '如果看整体，我建议先处理 CNSHK 的 Spot 暴露，再推进 CNNAS 的 T2 → T1 升级，同时继续保护 CNSHA 的优质结构。';
+        }
+
+        function getSummaryReply() {
+            return '这份报告的主结论很清楚：<strong>CNSHA 负责稳</strong>，<strong>CNSHK 需要修结构</strong>，<strong>CNNAS 值得做升级</strong>。如果只排一个优先级，先抓 CNSHK。';
+        }
+
+        function getWhyReply(topic) {
+            if (topic === 'cnsha') return '因为 CNSHA 的 T1 基础最厚、Spot 最低，所以它不是靠短期让价撑住，而是靠更健康的 mix 在支撑。';
+            if (topic === 'cnshk') return '因为 CNSHK 的 Spot 暴露太高，说明很多货还是在用低质量价格成交，所以结构体感会被拉坏。';
+            if (topic === 'cnnas') return '因为 CNNAS 已经有很强的 T2 基础，但还没有 T1，说明升级空间大于修复压力。';
+            return '你先告诉我想问哪个 port，我可以直接拆 why 给你看。';
+        }
+
+
+
+
+        function isGreeting(msg) {
+            return msg === 'hi' || msg === 'hello' || msg === 'hey' || msg === 'yo' || msg === 'hiya' || msg === '你好' || msg === '嗨' || msg === '哈喽' || msg.includes('good morning') || msg.includes('good afternoon') || msg.includes('good evening');
+        }
+
+        function getGreetingReply(msg) {
+            if (msg.includes('good morning')) return 'Good morning Elaine ☀️ 我在。今天想先看哪一块？';
+            if (msg.includes('good afternoon')) return 'Good afternoon Elaine 🌤️ 我在，今天要先看哪个 port？';
+            if (msg.includes('good evening')) return 'Good evening Elaine 🌙 我在，要不要我先帮你抓重点？';
+            if (msg === 'hello' || msg === 'hey' || msg === 'yo' || msg === 'hiya' || msg === '哈喽') return 'Hello Elaine 👋 我在，直接跟我说你想看什么。';
+            if (msg === 'hi' || msg === '你好' || msg === '嗨') return chatState.greeted ? 'Hi again Elaine 👋 继续，我在听。' : 'Hi Elaine 👋 我在。你可以直接跟我聊天了。';
+            return '';
+        }
+
+        function getSmallTalkReply(msg) {
+            if (msg.includes('how are you') || msg.includes('how are u') || msg.includes('你好吗') || msg.includes('最近好吗')) {
+                return 'I am good — and ready. 你要我帮你看 summary、risk，还是某个 port？';
+            }
+            if (msg.includes('thanks') || msg.includes('thank you') || msg.includes('谢谢') || msg.includes('thx')) {
+                return '不客气 Elaine 🙂 你继续问，我会直接回你。';
+            }
+            if (msg.includes('bye') || msg.includes('goodbye') || msg.includes('拜拜')) {
+                return 'Bye Elaine 👋 有需要再叫我。';
+            }
+            if (msg.includes('ok') || msg === 'okay' || msg === 'sure' || msg === '好') {
+                return '好，继续。你想看 summary、compare，还是某个 port？';
+            }
+            return '';
+        }
+
+        function getDirectReply(raw) {
+            const msg = raw.trim().toLowerCase();
+            if (!msg) return 'Type your question and I will reply.';
+
+            const detectedTopic = findTopic(msg);
+            const topic = detectedTopic || chatState.lastTopic;
+            if (detectedTopic) chatState.lastTopic = detectedTopic;
+
+            if (isGreeting(msg)) {
+                chatState.greeted = true;
+                return getGreetingReply(msg);
+            }
+
+            const smallTalk = getSmallTalkReply(msg);
+            if (smallTalk) return smallTalk;
+
+            if (msg === 'who are you' || msg.includes('what can you do')) {
+                return 'I can chat with you naturally, explain this report, compare ports, break down SEA volume, and tell you what to improve next.';
+            }
+
+            if (msg.includes('market')) {
+                return getMarketReply();
+            }
+
+            if (msg.includes('sea') || msg.includes('taiwan') || msg.includes('thailand') || msg.includes('vietnam') || msg.includes('tw ') || msg.includes('th ') || msg.includes('vn ')) {
+                return getSeaReply();
+            }
+
+            if ((msg.includes('20') && msg.includes('40')) || msg.includes('container') || msg.includes('箱型') || msg.includes('feu')) {
+                return getContainerReply();
+            }
+
+            if (msg.includes('total') || msg.includes('overall') || msg.includes('overview') || msg.includes('总体')) {
+                return getOverviewReply();
+            }
+
+            if (msg.includes('summary') || msg.includes('重点') || msg.includes('总结')) {
+                return getSummaryReply();
+            }
+
+            if (msg.includes('compare') || msg.includes('comparison') || msg.includes('比较') || msg.includes('对比')) {
+                return getComparisonReply();
+            }
+
+            if (msg.includes('improve') || msg.includes('improvement') || msg.includes('建议') || msg.includes('怎么改') || msg.includes('how to improve') || msg.includes('next step') || msg.includes('下一步')) {
+                return getImproveReply(topic);
+            }
+
+            if (msg.includes('why') || msg.includes('为什么')) {
+                return getWhyReply(topic);
+            }
+
+            if (msg.includes('risk') || msg.includes('spot') || msg.includes('health') || msg.includes('风险')) {
+                if (topic) return getPortReply(topic);
+                return '从整体看，最需要注意的是 <strong>CNSHK 的 Spot 暴露</strong>；最值得推进的是 <strong>CNNAS 的 T2 → T1 升级</strong>。';
+            }
+
+            if (topic) {
+                return getPortReply(topic);
+            }
+
+            return '收到。你可以直接像聊天一样问我：<strong>hi</strong>、<strong>summary</strong>、<strong>total</strong>、<strong>20\'/40\'</strong>、<strong>SEA</strong>、<strong>market update</strong>、<strong>why CNSHK</strong>、<strong>how to improve</strong>。';
+        }
+
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            addMessage(text, true);
+            input.value = '';
+
+            const reply = getDirectReply(text);
+            setTimeout(function() {
+                addMessage(reply, false);
+            }, 180);
+        }
+
+    </script>
 </body>
 </html>
