@@ -46,6 +46,12 @@
 | DMN | >$5,500 | $5,351-$5,499 | $5,350 | <$5,350 | >$6,700 | $6,641-$6,699 | $6,640 | <$6,640 |
 | RUH | >$5,500 | $5,399-$5,499 | $5,400 | <$5,400 | >$6,800 | $6,501-$6,799 | $6,500 | <$6,500 |
 
+## HTML 报告新增功能
+- 主报告新增 `Vessel Cost` 标签页，位置在 `Freight Rate` 后面。
+- Vessel Cost 数据来源：`Vessel_Operating_Cost.xlsx` → `BY VV` → `1st Estimation`。
+- 当前实现结构为左侧 VV 列表、右侧对应 1st Estimation 明细，并接入中英切换。
+- 该区域曾出现 tab 空白、容器嵌套错误与 `undefined` 字段问题，后续维护时需优先核对 HTML 容器闭合、动态渲染函数以及 translations 中英文字典键是否完整一致。
+
 ## HTML 报告格式要求
 - Spot Bookings 表格格式：简洁表格，按 POL (CNSHA/CNSHK/CNNAS) 分组
 - 列：B/L No. | Size (20'/40') | POD | Rate ($)
