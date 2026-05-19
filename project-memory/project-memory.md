@@ -1,32 +1,44 @@
-# 项目长期记忆
+# 工作记忆
 
 ## 用户偏好
 - 用户希望被称为 Elaine。
 - 用户希望助手是 master、clever，擅长 analysis、跳出框架思考，并主动给 suggestion。
 
-## 常用入口
-- FineBI：`https://bi.culines.com/`
-- 主报告本地文件：`C:\Users\elaineteh\WorkBuddy\20260413100944\CNSHA_CNSHK_CNNAS_Rate_Tier_Report.html`
-- 主报告 file URL：`file:///C:/Users/elaineteh/WorkBuddy/20260413100944/CNSHA_CNSHK_CNNAS_Rate_Tier_Report.html`
-- GitHub 仓库：`https://github.com/Elaine-Teh/vvd-rate-tier-report`
-- GitHub Pages：`https://Elaine-Teh.github.io/vvd-rate-tier-report/CNSHA_CNSHK_CNNAS_Rate_Tier_Report.html`
+## SFTP 数据源
+- **协议**: SFTP
+- **服务器**: 10.5.4.2
+- **端口**: 6622
+- **账号**: finebiuser
+- **密码**: [已隐藏]
+- **Elaine 目录**: `Master Data - Elaine/`
+  - `AVG Contribution By Vessel.xlsx`
+  - `Income Data Base-Marketing.xlsx` (VVD 数据源)
+- **Bob 目录**: `Master Data-Bob/`
+- **连接方式**: Python paramiko（已安装于 venv）
+
+## FineBI 登录信息
+
+
+- **网址**: https://bi.culines.com/
+- **账号**: LH.TRADE
+- **密码**: [已隐藏]
 
 ## 常用操作路径
-- Income Data Base-Marketing → VVD → 输入 TGLK2610W → Query → 导出 Excel
+- **Income Data Base-Marketing** → VVD → 输入 TGLK2610W → Query → 导出 Excel
 
 ## 导出数据方法
 1. 页面工具栏找下载/Export 按钮（⬇️ 图标）
-2. 选择“导出 Excel”
+2. 选择"导出 Excel"
 3. 保存文件
 
 ## 运费计算公式 (TGLK2610)
-- 费用包含：OFT + LSS + WRS + BAF
-- 计算公式：(OFT + BAF + LSS + WRS) Charge Amount 总和 ÷ OFT TEUs
-- 箱型区分：
+- **费用包含**: OFT + LSS + WRS + BAF
+- **计算公式**: (OFT + BAF + LSS + WRS) Charge Amount 总和 ÷ OFT TEUs
+- **箱型区分**: 
   - 20' = 20GP, FE20
   - 40' = 40HC, FE40, 40RH
-- SEA 分组：TW=Taiwan, VN=Vietnam, TH=Thailand, MY=Malaysia, 其他=China
-- 空值显示：- 
+- **SEA 分组**: TW=Taiwan, VN=Vietnam, TH=Thailand, MY=Malaysia, 其他=China
+- **空值显示**: "-" (破折号)
 
 ## CNSHA Rate Tier 分类 (按 POD, 最新 2026-04-14)
 | POD | 20' FAK | 20' T2 | 20' T1 | 20' Spot | 40' FAK | 40' T2 | 40' T1 | 40' Spot |
@@ -46,22 +58,22 @@
 | DMN | >$5,500 | $5,351-$5,499 | $5,350 | <$5,350 | >$6,700 | $6,641-$6,699 | $6,640 | <$6,640 |
 | RUH | >$5,500 | $5,399-$5,499 | $5,400 | <$5,400 | >$6,800 | $6,501-$6,799 | $6,500 | <$6,500 |
 
-## HTML 报告新增功能
-- 主报告新增 `Vessel Cost` 标签页，位置在 `Freight Rate` 后面。
-- Vessel Cost 数据来源：`Vessel_Operating_Cost.xlsx` → `BY VV` → `1st Estimation`。
-- 当前实现结构为左侧 VV 列表、右侧对应 1st Estimation 明细，并接入中英切换。
-- 该区域曾出现 tab 空白、容器嵌套错误与 `undefined` 字段问题，后续维护时需优先核对 HTML 容器闭合、动态渲染函数以及 translations 中英文字典键是否完整一致。
+## HTML 报告入口
+- **本地主报告**: `C:\Users\elaineteh\WorkBuddy\20260413100944\CNSHA_CNSHK_CNNAS_Rate_Tier_Report.html`
+- **本地 file URL**: `file:///C:/Users/elaineteh/WorkBuddy/20260413100944/CNSHA_CNSHK_CNNAS_Rate_Tier_Report.html`
+- **GitHub 仓库**: https://github.com/Elaine-Teh/vvd-rate-tier-report
+- **GitHub Pages 在线报告**: https://Elaine-Teh.github.io/vvd-rate-tier-report/CNSHA_CNSHK_CNNAS_Rate_Tier_Report.html
 
 ## HTML 报告格式要求
-- Spot Bookings 表格格式：简洁表格，按 POL (CNSHA/CNSHK/CNNAS) 分组
-- 列：B/L No. | Size (20'/40') | POD | Rate ($)
-- Spot 分类行：红色背景 (#FFC7CE) + 红色字体 (#9C0006)
-- 新增/修正记录：深红色背景 (#FF0000) + 白色字体高亮显示
-- 表格样式：w-full text-sm，thead 用浅色背景 bg-xxx-100
-- 修正记录需高亮：用户手动修正某个记录的分类时，用 highlight-spot class 高亮
+- **Spot Bookings 表格格式**: 简洁表格，按 POL (CNSHA/CNSHK/CNNAS) 分组
+- **列**: B/L No. | Size (20'/40') | POD | Rate ($)
+- **Spot 分类行**: 红色背景 (#FFC7CE) + 红色字体 (#9C0006)
+- **新增/修正记录**: 深红色背景 (#FF0000) + 白色字体 高亮显示
+- **表格样式**: w-full text-sm，thead 用浅色背景 bg-xxx-100
+- **修正记录需高亮**: 当用户手动修正某个记录的分类时，用 highlight-spot class 高亮
 
 ## Overview 页面格式 (Rate Tier Report)
-### China Ports 表格 (含 Tier Distribution)
+**China Ports 表格** (含 Tier Distribution):
 | Port | B/Ls | Bookings | TEU |
 |------|------|----------|-----|
 | CNSHA | 126 | 20 | 393 |
@@ -69,15 +81,16 @@
 | CNNAS | 106 | 24 | 350 |
 | CNSWA | 2 | 2 | 22 |
 
-### SEA Ports 表格 (FAK only, 无 tier distribution)
+**SEA Ports 表格** (FAK only, 无 tier distribution):
 | Region | B/Ls | Bookings | TEU |
 |--------|------|----------|-----|
 | Taiwan | 51 | 4 | 77 |
 | Thailand | 94 | 4 | 139 |
 | Vietnam | 79 | 4 | 79 |
 
-### 汇总卡片
+**汇总卡片**:
 - Total B/Ls: 333 (含 CNSWA)
 - Total Bookings: 77
 - Total TEU: 1,305 (China 1,010 + SEA 295)
-- Tier Distribution 仅显示 China Ports
+
+**Tier Distribution 仅显示 China Ports**
