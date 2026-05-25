@@ -101,7 +101,8 @@
 - **数据源**: SFTP `Master Data - Elaine/`:
   - `REX Rate.xlsx` → FAK/T2/T1 阈值 (按 POL+POD+Size, 含 VVD 维度)
   - `Income Data Base-Marketing.xlsx` → VVD 订舱数据
-- **SFTP 状态**: `Income Data Base-Marketing.xlsx` (32.6MB) 文件正常，Sheet 名为 `Sheet1`（非 INCOME_BKD_MARKETING）。上次损坏是网络波动导致，重试即可。
+  - `AVG Contribution By Vessel.xlsx` → 按 VVD+POR+DEL 汇总 CM/TEU(20') 和 CM/FEU(40')，40' 需 ×2 转为 FEU
+- **SFTP 状态**: 网络可能不稳定（2026-05-24 全天无法连接，2026-05-25 恢复）。文件下载失败时重试即可。本地缓存优先。
 - **REX Rate 结构**: Sheet "Rate"，列 B-M: SVC, Vessel, ETA, POL, STATUS, POD, FAK(20',40'), T2(20',40'), T1(20',40')
 - **REX Rate 覆盖 POLs**: CNNGB, CNSHA, CNTAO (无 CNSHK/CNNAS，需 CNSHA 阈值做 fallback)
 - **Tier 分类规则**: FAK ≥ fak | T2 ∈ [t1, fak) | T1 == t1 | Spot < t1
